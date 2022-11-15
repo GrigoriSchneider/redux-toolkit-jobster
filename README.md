@@ -330,6 +330,8 @@ function Register() {
     </Wrapper>
   );
 }
+
+export default Register;
 ```
 
 #### 17) Switch To React 18
