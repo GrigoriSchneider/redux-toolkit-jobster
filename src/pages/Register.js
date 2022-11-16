@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Logo } from '../components';
 import Wrapper from '../assets/wrappers/RegisterPage';
 import FormRow from '../components/FormRow';
+import { toast, ToastContainer } from 'react-toastify';
 // redux toolkit and useNavigate later
 
 const initialState = {
@@ -21,7 +22,7 @@ function Register() {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(`${name}: ${value}`);
+    // console.log(`${name}: ${value}`);
     setValues({ ...values, [name]: value });
   };
 
@@ -29,7 +30,7 @@ function Register() {
     e.preventDefault();
     const { name, email, password, isMember } = values;
     if (!email || !password || (!isMember && !name)) {
-      console.log('Please Fill Out All Fields');
+      toast.error('Please Fill Out All Fields');
       return;
     }
   };
