@@ -18,8 +18,8 @@ const initialState = {
 
 function Register() {
   const [values, setValues] = useState(initialState);
-  const dispatch = useDispatch();
   const { isLoading, user } = useSelector((store) => store.user);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -76,7 +76,7 @@ function Register() {
           value={values.password}
           handleChange={handleChange}
         />
-        <button type='submit' className='btn btn-block'>
+        <button type='submit' className='btn btn-block' disabled={isLoading}>
           submit
         </button>
 
