@@ -1,7 +1,7 @@
 import React from 'react';
 import Wrapper from '../assets/wrappers/SmallSidebar';
 import { FaTimes } from 'react-icons/fa';
-import NavLinks from './Navlinks';
+import NavLinks from './NavLinks';
 import Logo from './Logo';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleSidebar } from '../features/user/userSlice';
@@ -18,7 +18,9 @@ const SmallSidebar = () => {
     <Wrapper>
       <div
         className={
-          isSidebarOpen ? 'sidebar-container show-sidebar' : 'sidebar-container'
+          isSidebarOpen
+            ? 'sidebar-container '
+            : 'sidebar-container show-sidebar'
         }
       >
         <div className='content'>
