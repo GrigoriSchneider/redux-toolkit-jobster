@@ -1211,9 +1211,9 @@ return (
       return (
         <NavLink
           to={path}
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
+          className={({ isActive }) => {
+            return isActive ? 'nav-link active' : 'nav-link';
+          }}
           key={id}
           onClick={toggle}
         >
