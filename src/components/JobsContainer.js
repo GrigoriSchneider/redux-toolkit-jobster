@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import Job from './Job';
+import Wrapper from '../assets/wrappers/JobsContainer';
 import { getAllJobs } from '../features/allJobs/allJobsSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import Wrapper from '../assets/wrappers/BigSidebar';
 import Loading from './Loading';
 
 const JobsContainer = () => {
