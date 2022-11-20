@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Job from './Job';
+import { getAllJobs } from '../features/allJobs/allJobsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import Wrapper from '../assets/wrappers/BigSidebar';
 import Loading from './Loading';
@@ -7,6 +8,10 @@ import Loading from './Loading';
 const JobsContainer = () => {
   const { jobs, isLoading } = useSelector((store) => store.allJobs);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllJobs());
+  }, []);
 
   if (isLoading) {
     return <Loading center />;
